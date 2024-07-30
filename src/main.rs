@@ -1,5 +1,5 @@
+use sowa::cli::run_cli;
 
-
-fn main() {
-
+fn main() -> anyhow::Result<()> {
+    run_cli()
 }
