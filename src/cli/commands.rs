@@ -1,3 +1,4 @@
+use anyhow::Result;
 use clap::{Parser, Subcommand};
 use solana_sdk::{
     pubkey::Pubkey,
@@ -5,10 +6,9 @@ use solana_sdk::{
 };
 use crate::wallet::{create_account, get_balance};
 use crate::transaction::send_transaction;
-use anyhow::Result;
 
 #[derive(Parser)]
-#[command(author, version, about, long_about = None)]
+#[command(version)]
 pub struct Cli {
     #[command(subcommand)]
     command: Commands,

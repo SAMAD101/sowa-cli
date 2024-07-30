@@ -6,9 +6,7 @@ use dirs::home_dir;
 
 fn get_keypair_path() -> Result<std::path::PathBuf> {
     let mut path = home_dir().ok_or_else(|| anyhow!("Unable to get home directory"))?;
-    path.push(".config");
-    path.push("sowa");
-    path.push("keypair.json");
+    path.extend(&[".config", "sowa", "keypair.json"]);
     Ok(path)
 }
 

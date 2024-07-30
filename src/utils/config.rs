@@ -19,9 +19,7 @@ impl Default for Config {
 
 fn get_config_path() -> Result<std::path::PathBuf> {
     let mut path = home_dir().ok_or_else(|| anyhow!("Unable to get home directory"))?;
-    path.push(".config");
-    path.push("sowa");
-    path.push("config.json");
+    path.extend(&[".config", "sowa", "config.json"]);
     Ok(path)
 }
 
