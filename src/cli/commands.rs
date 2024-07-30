@@ -5,7 +5,7 @@ use solana_sdk::{
     signer::Signer,
 };
 use crate::wallet::{create_account, get_balance};
-use crate::transaction::send_transaction;
+use crate::transaction::{send_transaction, get_transaction_history};
 
 #[derive(Parser)]
 #[command(version)]
@@ -19,6 +19,7 @@ enum Commands {
     CreateAccount,
     Balance { address: Pubkey },
     Send { to: Pubkey, amount: f64 },
+    History,
 }
 
 pub fn run_cli() -> Result<()> {
@@ -38,6 +39,13 @@ pub fn run_cli() -> Result<()> {
         Commands::Send { to, amount } => {
             let signature = send_transaction(to, *amount)?;
             println!("Transaction sent: {}", signature);
+            Ok(())
+        }
+        Commands::History => {
+            let history = get_transaction_history()?;
+            for (index, signature) in history.iter().enumerate() {
+                println!("{}. {}", index + 1, signature);
+            }
             Ok(())
         }
     }
