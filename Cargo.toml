@@ -1,7 +1,11 @@
 [package]
 name = "sowa"
+authors = ["Sam <asamadans@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/SAMAD101/sowa"
+readme = "README.md"
+license-file = "LICENSE"
 
 [dependencies]
 solana-sdk = "2.0.3"
