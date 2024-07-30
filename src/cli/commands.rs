@@ -17,7 +17,7 @@ pub struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     CreateAccount,
-    Balance { address: Pubkey },
+    Balance { address: Option<Pubkey> },
     Send { to: Pubkey, amount: f64 },
     History,
 }
@@ -32,9 +32,13 @@ pub fn run_cli() -> Result<()> {
             Ok(())
         }
         Commands::Balance { address } => {
-            let balance = get_balance(address)?;
-            println!("Balance of {}: {} SOL", address, balance);
-            Ok(())
+            let balance = get_balance(address.as_ref())?;
+        let address_str = address.map_or_else(
+            || "your account".to_string(),
+            |pubkey| pubkey.to_string()
+        );
+        println!("Balance of {}: {} SOL", address_str, balance);
+        Ok(())
         }
         Commands::Send { to, amount } => {
             let signature = send_transaction(to, *amount)?;
