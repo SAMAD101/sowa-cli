@@ -1,6 +1,6 @@
 # Sowa - Solana Wallet CLI
 
-Sowa (SOlana-WAllet) is a command-line interface tool for managing Solana wallets and performing basic operations on the Solana blockchain. This tool is designed for developers and users who prefer working with the command line for their Solana interactions.
+Sowa (SOlana-WAllet) is a command-line interface tool for managing Solana wallets and performing basic operations on the Solana blockchain.
 
 ## Features
 
@@ -14,7 +14,7 @@ Sowa (SOlana-WAllet) is a command-line interface tool for managing Solana wallet
 
 ### Prerequisites
 
-- Rust and Cargo (latest stable version)
+- Rust and Cargo
 - Git
 
 ### Building from source
@@ -88,7 +88,3 @@ Sowa stores its configuration in `~/.config/sowa/config.json`. The default RPC U
 
 - The keypair is stored locally at `~/.config/sowa/keypair.json`. Keep this file safe and do not share it with anyone.
 - Always double-check addresses when sending transactions to avoid losing funds.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
