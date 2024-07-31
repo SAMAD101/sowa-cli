@@ -2,10 +2,10 @@
 name = "sowa"
 description = "A Solana Wallet CLI"
 authors = ["Sam <asamadans@gmail.com>"]
-version = "1.1.0"
+version = "1.1.1"
 edition = "2021"
 repository = "https://github.com/SAMAD101/sowa"
-homepage = "https://github.com/SAMAD101/sowa"
+homepage = "https://crates.io/crates/sowa"
 readme = "README.md"
 license-file = "LICENSE"
 keywords = ["solana", "cli", "wallet", "sowa"]

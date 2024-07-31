@@ -20,17 +20,23 @@ Sowa (SOlana-WAllet) is a command-line interface tool for managing Solana wallet
 ### Building from source
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/yourusername/sowa.git
    cd sowa
    ```
 
 2. Build the project:
-   ```
+   ```bash
    cargo build --release
    ```
 
 3. The binary will be available at `target/release/sowa`
+
+### Using Cargo
+
+```bash
+cargo install sowa
+```
 
 ## Usage
 
@@ -38,32 +44,32 @@ You can run Sowa using either `cargo run` or the compiled binary directly. Here 
 
 ### Create a new account
 
-```
-cargo run -- create-account
+```bash
+sowa create-account
 ```
 
 This will generate a new keypair and save it to `~/.config/sowa/keypair.json`.
 
 ### Check account balance
 
-```
-cargo run -- balance <PUBKEY>
+```bash
+sowa balance <PUBKEY>
 ```
 
 Replace `<PUBKEY>` with the address you want to check.
 
 ### Send SOL
 
-```
-cargo run -- send <TO_PUBKEY> <AMOUNT>
+```bash
+sowa send <TO_PUBKEY> <AMOUNT>
 ```
 
 This sends the specified amount of SOL to the given address.
 
 ### View transaction history
 
-```
-cargo run -- history
+```bash
+sowa history
 ```
 
 This command displays the transaction history for the current account.
@@ -71,13 +77,13 @@ This command displays the transaction history for the current account.
 ### Configure RPC URL
 
 View current RPC URL:
-```
-cargo run -- config
+```bash
+sowa config
 ```
 
 Update RPC URL:
-```
-cargo run -- config <NEW_RPC_URL>
+```bash
+sowa config <NEW_RPC_URL>
 ```
 
 ## Configuration
