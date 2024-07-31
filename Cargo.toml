@@ -1,11 +1,15 @@
 [package]
 name = "sowa"
+description = "A Solana Wallet CLI"
 authors = ["Sam <asamadans@gmail.com>"]
-version = "0.1.0"
+version = "1.1.0"
 edition = "2021"
 repository = "https://github.com/SAMAD101/sowa"
+homepage = "https://github.com/SAMAD101/sowa"
 readme = "README.md"
 license-file = "LICENSE"
+keywords = ["solana", "cli", "wallet", "sowa"]
+categories = ["command-line-interface", "command-line-utilities", "development-tools", "cryptography::cryptocurrencies"]
 
 [dependencies]
 solana-sdk = "2.0.3"
