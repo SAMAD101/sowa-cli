@@ -1,4 +1,4 @@
-# Sowa - Solana Wallet CLI
+# SoWa - Solana Wallet CLI
 
 Sowa (SOlana-WAllet) is a command-line interface tool for managing Solana wallets and performing basic operations on the Solana blockchain.
 
