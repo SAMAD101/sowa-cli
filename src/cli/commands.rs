@@ -6,6 +6,7 @@ use solana_sdk::{
 };
 use crate::wallet::{create_account, get_balance};
 use crate::transaction::{send_transaction, get_transaction_history};
+use crate::utils::config::{get_config, save_config};
 
 #[derive(Parser)]
 #[command(version)]
@@ -20,6 +21,7 @@ enum Commands {
     Balance { address: Option<Pubkey> },
     Send { to: Pubkey, amount: f64 },
     History,
+    Config { rpc_url: Option<String> },
 }
 
 pub fn run_cli() -> Result<()> {
@@ -49,6 +51,17 @@ pub fn run_cli() -> Result<()> {
             let history = get_transaction_history()?;
             for (index, signature) in history.iter().enumerate() {
                 println!("{}. {}", index + 1, signature);
+            }
+            Ok(())
+        }
+        Commands::Config { rpc_url } => {
+            let mut config = get_config()?;
+            if let Some(url) = rpc_url {
+                config.rpc_url = url.clone();
+                save_config(&config)?;
+                println!("Updated RPC URL to: {}", url);
+            } else {
+                println!("Current RPC URL: {}", config.rpc_url);
             }
             Ok(())
         }
